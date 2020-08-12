@@ -11,9 +11,14 @@ import './styles.css';
 
 
 function TeacherForm() {
+  const [name, setName] = useState('');
+  const [avatar, setAvatar] = useState('');
+  const [whatsapp, setWhatsapp] = useState('');
+  const [bio, setBio] = useState('');
+
   const [scheduleItems, setScheduleItems] = useState([
     { week_day: 0, from: '', to: '' }
-  ])
+  ]);
   
  
 
@@ -37,7 +42,7 @@ function TeacherForm() {
         <fieldset>
             <legend>Seus dados</legend>
 
-            <Input name="name" label="Nome completo"/>
+            <Input name="name" label="Nome completo" value={name} onChange={(e) => { setName(e.target.value) }} />
             <Input name="avatar" label="Avatar"/>
             <Input name="whatsapp" label="Whatsapp"/>
             <Textarea name="bio" label="Biografia" />
@@ -109,7 +114,7 @@ function TeacherForm() {
             Preencha todos os dados
           </p>
 
-          <button type="button"></button>
+          <button type="button"> Salvar cadastro </button>
         </footer>
       </main>
     </div>
